@@ -1,0 +1,10 @@
+# Ignorar a pasta "report"
+/report/
+
+# Ignorar o arquivo ".env"
+.env
+
+# Ignorar a arquivo "report"
+/log.html/
+/output.xml/
+/report.html/
