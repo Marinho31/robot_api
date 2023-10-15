@@ -1,9 +1,6 @@
 *** Settings ***
 Resource        ../main.robot
 *** Keywords ***
-
-  
-
-
-Entao verifico dados da resposta se contem id
-    Dictionary Should Contain Key     ${resposta}    id    
+Dado que cliente envia dados validos para logar no sistema
+    Dado que cliente Envie dados validos de registro
+    Efetuar login com sucesso    ${criar_email}    ${criar_senha}    

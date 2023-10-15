@@ -5,6 +5,8 @@ Dado que cliente Envie dados validos de registro
     Criar Massa de Dados
     Crie dados de registro geral    ${criar_email}    ${criar_senha}    ${nome_completo}         
     Set Test Variable    ${URL}    ${url}${ADM_register}
+    Set Test Variable    ${criar_email}
+    Set Test Variable    ${criar_senha}
 
 Entao confiro se useuario foi cadastrado corretamente 
     Dictionary Should Contain Item    ${resposta.json()}    role    ADMIN

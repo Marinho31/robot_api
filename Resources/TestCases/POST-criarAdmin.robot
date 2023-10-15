@@ -19,7 +19,6 @@ CT01.02-Validar cadastro duplicado
     Quando Solicito a criacao
     Entao nao e permitido criar usuario duplicado
 CT01.03-Validar login com sucesso
-    Criar secao
     Dado que cliente envia dados validos para logar no sistema
     Quando Solicito a criacao
     
