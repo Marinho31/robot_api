@@ -2,8 +2,8 @@
 Resource        ../main.robot
 *** Variables ***
 
-${URL}             https://syncchurch-service.onrender.com/
-${ADM_register}    authentication/register
-${ADM_LOGIN}       authentication/log-in
+${URL}                 https://api-syncchurch.up.railway.app/
+${ADM_register}        authentication/register
+${ADM_LOGIN}           authentication/log-in
  
 
