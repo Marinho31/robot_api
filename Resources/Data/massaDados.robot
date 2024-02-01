@@ -4,7 +4,14 @@ Resource        ../main.robot
 *** Variables ***
 ${email_cadastrado}    umendes@gmail.com
 ${senha_cadastrada}    59P%pG&q+9
+${name_user}           Enrico 
+${adm}                 ADMIN  
+${user_invalido}       Joao
+${senha_invalida}      asrqr1       
+${email_invalido}      umendess@gmail.com
+
 *** Keywords ***
+
 Criar Massa de Dados
     ${nome_aleatorio}         FakerLibrary.Username
     ${nome_completo}          FakerLibrary.First Name
@@ -25,8 +32,7 @@ Crie dados de registro geral
     ...    role=ADMIN
     Set Test Variable    ${body}
     Set test variable    ${url}    ${url}${ADM_register}
-Efetuar login com sucesso
-    [Arguments]    ${email}    ${senha}
+Efetuar login e-mail ${email} senha ${senha}
     ${body}=    Create Dictionary    
     ...    email=${email}
 	...    password=${senha}

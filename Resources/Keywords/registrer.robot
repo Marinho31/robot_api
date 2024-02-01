@@ -11,6 +11,9 @@ Entao confiro se useuario foi cadastrado corretamente
     Dictionary Should Contain Item    ${resposta.json()}    role    ADMIN
     Dictionary Should Contain Key    ${resposta.json()}     id
 
+Dado que envie para cadastro cliente duplicado na base
+    Crie dados de registro geral    ${email_cadastrado}    ${senha_cadastrada}    ${name_user}   
+    
 E repitir cadastro
     ${response_json}    Evaluate     json.loads($resposta.text)
     ${id}          Set Variable  ${response_json['id']}
@@ -25,11 +28,6 @@ Entao nao e permitido criar usuario duplicado
     ...    error=Conflict
     ...    statusCode=${409}
     Should Be Equal    ${expected_response}    ${resposta.json()}
-
-
-        
-
-    
    
     
 
