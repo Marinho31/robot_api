@@ -1,18 +1,27 @@
 name: test api
-on: push
+on: 
+  push:
+    branches: ["develop"]
+  pull_request:
+    branches: ["develop"]
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Get code
+        uses: actions/checkout@v4  # Atualizado para v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4  # Atualizado para v4
         with:
-          fetch-depth: 0
+          node-version: 20
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5.0.0
         with:
-          python-version: 3.10.7
+          python-version: 3.12
 
       - name: Install Dependencies
         run: |
@@ -21,4 +30,11 @@ jobs:
 
       - name: Run Tests
         run: |
-          robot -i regressivo -d report Resources/TestCases/POST-criarAdmin.robot
+          robot -L TRACE -i regressivo -d report Resources/TestCases
+
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v4  # Atualizado para v4
+        with:
+          name: robot-report
+          path: report/
