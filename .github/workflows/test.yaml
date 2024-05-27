@@ -31,10 +31,3 @@ jobs:
       - name: Run Tests
         run: |
           robot -L TRACE -i smoke -d report Resources/TestCases
-
-      - name: Upload Test Report
-        if: always()
-        uses: actions/upload-artifact@v4  # Atualizado para v4
-        with:
-          name: robot-report
-          path: report/
