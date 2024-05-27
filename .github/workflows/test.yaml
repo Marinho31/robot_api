@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Tests
         run: |
-          robot -L TRACE -i regressivo -d report Resources/TestCases
+          robot -L TRACE -i smoke -d report Resources/TestCases
 
       - name: Upload Test Report
         if: always()
