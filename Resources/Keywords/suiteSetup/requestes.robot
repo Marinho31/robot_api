@@ -5,14 +5,17 @@ Resource    ../../main.robot
 * Keywords *
 
 Criar secao
+    Load Env
     ${headers}     Create Dictionary
     ...    Content-Type=application/json
+    ...    authorization=%{BEARER}
     Set Suite Variable    ${headers}
 
 informo o ${corpo} da requisição
     Set test variable   ${body}  ${corpo}
 
-E recebo o status "${statusCode}" na resposta
+
+and I get the status "${statusCode}" in the response
     Status Should Be    ${statusCode}  ${resposta}
 
 Quando solicito a consulta
@@ -22,7 +25,7 @@ Quando solicito a consulta
     ...                 url=${url}
     Set test variable   ${resposta}
 
-Quando Solicito a criacao
+I request creation
     ${resposta}    POST 
     ...                 url=${url}
     ...                 json=${body}

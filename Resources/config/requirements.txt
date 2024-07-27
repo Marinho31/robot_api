@@ -1,7 +1,7 @@
 pi==0.1.2
-pywatchman==1.4.1
-robotframework==6.0.2
-robotframework-faker==5.0.0
-robotframework-requests==0.9.5
-robotframework-pabot==2.16.0
-python-dotenv[cli]==1.0.0
+pywatchman
+robotframework
+robotframework-faker
+robotframework-requests
+robotframework-pabot
+python-dotenv[cli]

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20240727 17:03:05.341" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Api" source="C:\Projetos QA\Katalys\robot_api">
+<suite id="s1-s1" name="Resources" source="C:\Projetos QA\Katalys\robot_api\Resources">
+<suite id="s1-s1-s1" name="TestCases" source="C:\Projetos QA\Katalys\robot_api\Resources\TestCases">
+<suite id="s1-s1-s1-s1" name="POST" source="C:\Projetos QA\Katalys\robot_api\Resources\TestCases\POST">
+<suite id="s1-s1-s1-s1-s1" name="200" source="C:\Projetos QA\Katalys\robot_api\Resources\TestCases\POST\200">
+<suite id="s1-s1-s1-s1-s1-s1" name="Login" source="C:\Projetos QA\Katalys\robot_api\Resources\TestCases\POST\200\login.robot">
+<test id="s1-s1-s1-s1-s1-s1-t1" name="CT01.01-Validar registro de usuario com sucesso" line="7">
+<kw name="Criar secao" library="requestes" type="SETUP">
+<kw name="Load Env" library="loadEnv">
+<status status="PASS" starttime="20240727 17:03:07.271" endtime="20240727 17:03:07.272"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>authorization=%{BEARER}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240727 17:03:07.273" level="INFO">${headers} = {'Content-Type': 'application/json', 'authorization': 'Bearer 248200cf8fecc00d4c09812d66a64961855104fabaa8ec96101200ccb72166409f092effab812a90f8148a74db3ca69f16b808ca1e70bf3add3adca386c5300e127867630e...</msg>
+<status status="PASS" starttime="20240727 17:03:07.273" endtime="20240727 17:03:07.274"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${headers}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240727 17:03:07.275" level="INFO">${headers} = {'Content-Type': 'application/json', 'authorization': 'Bearer 248200cf8fecc00d4c09812d66a64961855104fabaa8ec96101200ccb72166409f092effab812a90f8148a74db3ca69f16b808ca1e70bf3add3adca386c5300e127867630e...</msg>
+<status status="PASS" starttime="20240727 17:03:07.274" endtime="20240727 17:03:07.275"/>
+</kw>
+<status status="PASS" starttime="20240727 17:03:07.271" endtime="20240727 17:03:07.275"/>
+</kw>
+<kw name="Given create login email %{USER} password %{PASSWORD}" library="login_formulario" sourcename="create login email ${email} password ${senha}">
+<kw name="Load Env" library="loadEnv">
+<status status="PASS" starttime="20240727 17:03:07.283" endtime="20240727 17:03:07.284"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>identifier=${email}</arg>
+<arg>password=${senha}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240727 17:03:07.285" level="INFO">${body} = {'identifier': 'qteste2323@gmail.com', 'password': 'F0A2C732'}</msg>
+<status status="PASS" starttime="20240727 17:03:07.285" endtime="20240727 17:03:07.285"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240727 17:03:07.286" level="INFO">${body} = {'identifier': 'qteste2323@gmail.com', 'password': 'F0A2C732'}</msg>
+<status status="PASS" starttime="20240727 17:03:07.286" endtime="20240727 17:03:07.286"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${url}</arg>
+<arg>${url}${ADM_LOGIN}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240727 17:03:07.288" level="INFO">${url} = https://api.katalys.b2.digital/api/auth/local</msg>
+<status status="PASS" starttime="20240727 17:03:07.286" endtime="20240727 17:03:07.288"/>
+</kw>
+<kw name="I request creation" library="requestes">
+<kw name="POST" library="RequestsLibrary">
+<var>${resposta}</var>
+<arg>url=${url}</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20240727 17:03:12.029" level="INFO">POST Request : url=https://api.katalys.b2.digital/api/auth/local 
+ path_url=/api/auth/local 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'authorization': 'Bearer 248200cf8fecc00d4c09812d66a64961855104fabaa8ec96101200ccb72166409f092effab812a90f8148a74db3ca69f16b808ca1e70bf3add3adca386c5300e127867630e305067958634dc198500178bf9e3d72602d8adfac9d04279adb69d370db3a2040da747371b55e4666efe91b7af6cbe1dd43d00744c3b21f95587b7', 'Content-Length': '62'} 
+ body=b'{"identifier": "qteste2323@gmail.com", "password": "F0A2C732"}' 
+ </msg>
+<msg timestamp="20240727 17:03:12.029" level="INFO">POST Response : url=https://api.katalys.b2.digital/api/auth/local 
+ status=200, reason=OK 
+ headers={'content-type': 'application/json; charset=utf-8', 'vary': 'Accept-Encoding,Origin', 'content-security-policy': "connect-src 'self' https:;img-src 'self' data: blob: storage.googleapis.com;media-src 'self' data: blob: storage.googleapis.com;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'", 'referrer-policy': 'no-referrer', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '10', 'x-ratelimit-remaining': '8', 'x-ratelimit-reset': '1722110590', 'x-powered-by': 'Strapi &lt;strapi.io&gt;', 'content-encoding': 'gzip', 'x-cloud-trace-context': 'ff0e6b6015d1a6b112610c2041218216;o=1', 'date': 'Sat, 27 Jul 2024 20:03:03 GMT', 'server': 'Google Frontend', 'cache-control': 'private', 'via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'Transfer-Encoding': 'chunked'} 
+ body={"jwt":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImlhdCI6MTcyMjExMDU4MywiZXhwIjoxNzI0NzAyNTgzfQ.kV0NFVBUk1nC0d56Eyiv84q4_VXR4Bj8UEsNCxPQEhU","user":{"id":24,"username":"qteste2323@gmail.com","email":"qteste2323@gmail.com","provider":{"id":34,"name":"Caio Marinho","email":"qteste2323@gmail.com","document":"123.897.496-38","job_title":"QA","cel_phone_number":"(53) 45476-6545","type":{"id":"AUT","name":"Autônomo"},"category":null,"createdAt":"2024-07-23T20:45:58.434Z","updatedAt":"2024-07-23T20:49:26.512Z","phone_number":"(12) 3346-2352","legal_representative_name":"","cbo":{"id":243,"code":"212405","description":"Analista de desenvolvimento de sistemas"},"regional_council":{"id":"OUTROS","name":"OUTROS"},"birth_date":"1991-06-17","marital_status":null,"provider_role":{"id":2,"code":"ADMIN","name":"Administrador"},"rc_registration":"","rc_registration_date":null,"rc_federation_unit":"","company":{"id":1,"company_name":"B2 Digital","state_registration":"0756630000190","phone_number":"(99) 99999-9999","domain":"b2-digital","theme_color":"#fa470f","createdAt":"2023-10-15T13:57:36.438Z","updatedAt":"2024-07-07T19:07:08.260Z","email":"admin@b2.digital","document":"11.111.111/1111-11","company_trade_name":"B2 Digital"},"address":{"id":144,"zip_code":"12312-312","address":"","neighborhood":"","number":"","complement":"","county":{"id":4536,"name":"Santo André","ibge_code":"3547809","createdAt":"2024-04-17T00:00:28.647Z","updatedAt":"2024-04-17T00:00:28.647Z","federation_unit_id":{"id":21,"name":"São Paulo","abbreviation":"SP","ibge_code":"35","createdAt":"2024-04-16T23:59:24.549Z","updatedAt":"2024-04-16T23:59:24.549Z"}}},"digital_signature":null},"confirmed":true,"blocked":false,"createdAt":"2024-07-23T20:46:04.455Z","updatedAt":"2024-07-27T20:02:11.631Z","profile":"AD"}} 
+ </msg>
+<msg timestamp="20240727 17:03:12.029" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240727 17:03:07.289" endtime="20240727 17:03:12.030"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${resposta}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240727 17:03:12.031" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240727 17:03:12.030" endtime="20240727 17:03:12.031"/>
+</kw>
+<status status="PASS" starttime="20240727 17:03:07.288" endtime="20240727 17:03:12.032"/>
+</kw>
+<status status="PASS" starttime="20240727 17:03:07.276" endtime="20240727 17:03:12.032"/>
+</kw>
+<kw name="And get token user" library="login">
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${token_user}</arg>
+<arg>${resposta.json()['jwt']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240727 17:03:12.047" level="INFO">${token_user} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImlhdCI6MTcyMjExMDU4MywiZXhwIjoxNzI0NzAyNTgzfQ.kV0NFVBUk1nC0d56Eyiv84q4_VXR4Bj8UEsNCxPQEhU</msg>
+<status status="PASS" starttime="20240727 17:03:12.046" endtime="20240727 17:03:12.047"/>
+</kw>
+<status status="PASS" starttime="20240727 17:03:12.039" endtime="20240727 17:03:12.047"/>
+</kw>
+<kw name="When and I get the status &quot;200&quot; in the response" library="requestes" sourcename="and I get the status &quot;${statusCode}&quot; in the response">
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>${statusCode}</arg>
+<arg>${resposta}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20240727 17:03:12.061" endtime="20240727 17:03:12.063"/>
+</kw>
+<status status="PASS" starttime="20240727 17:03:12.055" endtime="20240727 17:03:12.063"/>
+</kw>
+<tag>ok</tag>
+<status status="PASS" starttime="20240727 17:03:07.268" endtime="20240727 17:03:12.070"/>
+</test>
+<status status="PASS" starttime="20240727 17:03:05.378" endtime="20240727 17:03:12.079"/>
+</suite>
+<status status="PASS" starttime="20240727 17:03:05.375" endtime="20240727 17:03:12.087"/>
+</suite>
+<status status="PASS" starttime="20240727 17:03:05.373" endtime="20240727 17:03:12.089"/>
+</suite>
+<status status="PASS" starttime="20240727 17:03:05.370" endtime="20240727 17:03:12.091"/>
+</suite>
+<status status="PASS" starttime="20240727 17:03:05.368" endtime="20240727 17:03:12.092"/>
+</suite>
+<status status="PASS" starttime="20240727 17:03:05.344" endtime="20240727 17:03:12.095"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">ok</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Api">Robot Api</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Resources">Robot Api.Resources</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TestCases">Robot Api.Resources.TestCases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="POST">Robot Api.Resources.TestCases.POST</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="200">Robot Api.Resources.TestCases.POST.200</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1-s1-s1" name="Login">Robot Api.Resources.TestCases.POST.200.Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240727 17:03:06.551" level="ERROR">Error in file 'C:\Projetos QA\Katalys\robot_api\Resources\config\Libraries.robot' on line 18: Importing library 'RobotDebug' failed: ModuleNotFoundError: No module named 'prompt_toolkit.cursor_shapes'
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\RobotDebug\__init__.py", line 1, in &lt;module&gt;
+    from .RobotDebug import Listener, RobotDebug  # noqa: F401
+  File "C:\Python310\lib\site-packages\RobotDebug\RobotDebug.py", line 8, in &lt;module&gt;
+    from .debugcmd import DebugCmd, ReplCmd, is_step_mode
+  File "C:\Python310\lib\site-packages\RobotDebug\debugcmd.py", line 14, in &lt;module&gt;
+    from .cmdcompleter import CmdCompleter, KeywordAutoSuggestion
+  File "C:\Python310\lib\site-packages\RobotDebug\cmdcompleter.py", line 12, in &lt;module&gt;
+    from .prompttoolkitcmd import PromptToolkitCmd
+  File "C:\Python310\lib\site-packages\RobotDebug\prompttoolkitcmd.py", line 9, in &lt;module&gt;
+    from prompt_toolkit.cursor_shapes import CursorShape
+PYTHONPATH:
+  C:\Projetos QA\Katalys\robot_api\lib
+  C:\Projetos QA\Katalys\robot_api\resources
+  c:\Users\rodri\.vscode\extensions\d-biehl.robotcode-0.83.3\bundled\libs
+  c:\Users\rodri\.vscode\extensions\d-biehl.robotcode-0.83.3\bundled\tool\robotcode
+  C:\Python310\python310.zip
+  C:\Python310\DLLs
+  C:\Python310\lib
+  C:\Python310
+  C:\Users\rodri\AppData\Roaming\Python\Python310\site-packages
+  C:\Users\rodri\AppData\Roaming\Python\Python310\site-packages\win32
+  C:\Users\rodri\AppData\Roaming\Python\Python310\site-packages\win32\lib
+  C:\Users\rodri\AppData\Roaming\Python\Python310\site-packages\Pythonwin
+  C:\Python310\lib\site-packages</msg>
+<msg timestamp="20240727 17:03:06.712" level="ERROR">Error in file 'C:\Projetos QA\Katalys\robot_api\Resources\main.robot' on line 5: Invalid resource file extension '.py'. Supported extensions are '.resource', '.robot', '.txt', '.tsv', '.rst' and '.rest'.</msg>
+</errors>
+</robot>
