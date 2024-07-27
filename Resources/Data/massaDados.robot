@@ -32,11 +32,7 @@ Crie dados de registro geral
     ...    role=ADMIN
     Set Test Variable    ${body}
     Set test variable    ${url}    ${url}${ADM_register}
-Efetuar login e-mail ${email} senha ${senha}
-    ${body}=    Create Dictionary    
-    ...    email=${email}
-	...    password=${senha}
-    Set Test Variable    ${body} 
-    Set test variable    ${url}    ${url}${ADM_LOGIN}
+
+
 
      

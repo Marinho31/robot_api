@@ -2,14 +2,23 @@
 Resource        ../main.robot
 *** Keywords ***
 
-Dado que cliente envia dados cadastrados para efetuar login e-mail ${email} senha ${senha}
-    Efetuar login e-mail ${email} senha ${senha}
-    Set Test Variable    ${email}
+E verificdo dados da resposta
+    ${response_json}    Evaluate     json.loads($resposta.text)
 
-Dado que cliente esta logado
-    Dado que cliente envia dados cadastrados para efetuar login e-mail ${email_cadastrado} senha ${senha_cadastrada}
-    Quando Solicito a criacao
+    ${email}       Set Variable  ${response_json['email']}
+    ${fullName}    Set Variable  ${response_json['fullName']}
+    ${role}        Set Variable  ${response_json['role']}
 
-Quando Solicita para deslogar
-    Efetuar logout e-mail ${email_cadastrado} senha ${senha_cadastrada}
-    Quando Solicito a criacao
+deve persisitir o campo cep ${cep} na resposta
+    Dictionary Should Contain Key    ${resposta.json()}    hasCep
+    ${dado_cep}=       Get From Dictionary    ${resposta.json()}    hasCep
+    ${dado_cep}    Convert to string  ${dado_cep}
+
+
+Entao sistema verifica a resposta e nao deve logar
+    ${expected_response} =  Create Dictionary
+    ...    message=Wrong credentials provided.
+    Should Be Equal    ${expected_response}    ${resposta.json()}
+
+get token user
+    Set Test Variable    ${token_user}    ${resposta.json()['jwt']}

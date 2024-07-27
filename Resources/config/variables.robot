@@ -2,8 +2,7 @@
 Resource        ../main.robot
 *** Variables ***
 
-${URL}                 https://api-syncchurch.up.railway.app/
-${ADM_register}        authentication/register
-${ADM_LOGIN}           authentication/log-in
+${URL}                 https://api.katalys.b2.digital/
+${ADM_LOGIN}           api/auth/local
  
 
