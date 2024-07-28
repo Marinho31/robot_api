@@ -1,8 +1,8 @@
 *** Settings ***
 
-Resource       ../../../main.robot
+Resource       ../../../Main.robot
 
-Test Setup    Criar secao
+Test Setup    authorized
 
 *** Variables ***
 ${response_login}    ${CURDIR}/../../../Data/dasos.resposta.json

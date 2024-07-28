@@ -4,7 +4,7 @@ Resource    ../../main.robot
 
 * Keywords *
 
-Criar secao
+authorized
     Load Env
     ${headers}     Create Dictionary
     ...    Content-Type=application/json

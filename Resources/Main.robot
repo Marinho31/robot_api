@@ -14,7 +14,6 @@ Resource    Data/massaDados.robot
 #login
 Resource    Keywords/login/login.robot
 Resource    Keywords/login/login_formulario.robot
-Resource    Keywords/login/login_path.robot
 
 #outros
 Resource    Keywords/registrer.robot
