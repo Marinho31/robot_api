@@ -1,10 +1,17 @@
 # Ignorar a pasta "report"
 /report/
+results
 
 # Ignorar o arquivo ".env"
 .env
 
-# Ignorar a arquivo "report"
+# Ignorar arquivos de relatório
 /log.html/
 /output.xml/
 /report.html/
+
+# Outros
+package.json
+package-lock.json
+node_modules
+dist/

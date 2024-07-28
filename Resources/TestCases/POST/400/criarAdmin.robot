@@ -5,7 +5,7 @@ Test Setup    Criar secao
 *** Test Cases ***
 
 CT01.01-Validar cadastro duplicado
-    [Tags]    regressivo
+    [Tags]    smoke
     Dado que cliente Envie dados validos de registro    
     Quando Solicito a criacao
     E repitir cadastro
