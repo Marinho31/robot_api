@@ -5,11 +5,13 @@ results
 # Ignorar o arquivo ".env"
 .env
 
-# Ignorar a arquivo "report"
+# Ignorar arquivos de relatório
 /log.html/
 /output.xml/
 /report.html/
 
-#outros
+# Outros
 package.json
 package-lock.json
+node_modules
+dist/
