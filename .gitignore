@@ -1,5 +1,6 @@
 # Ignorar a pasta "report"
 /report/
+results
 
 # Ignorar o arquivo ".env"
 .env
@@ -8,3 +9,7 @@
 /log.html/
 /output.xml/
 /report.html/
+
+#outros
+package.json
+package-lock.json
