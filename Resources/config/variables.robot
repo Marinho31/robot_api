@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../main.robot
+Resource        ../Main.Robot
 *** Variables ***
 
 ${URL}                 https://api.katalys.b2.digital/

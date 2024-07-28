@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../main.robot
+Resource        ../Main.Robot
 *** Keywords ***
 Dado que cliente Envie dados validos de registro
     Criar Massa de Dados

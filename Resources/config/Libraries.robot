@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../main.robot
+Resource        ../Main.Robot
 Library  jsonschema
 Library  OperatingSystem
 Library  Collections

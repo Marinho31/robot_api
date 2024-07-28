@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource       ../../../Main.robot
+Resource       ../../../Main.Robot
 
 Test Setup    authorized
 

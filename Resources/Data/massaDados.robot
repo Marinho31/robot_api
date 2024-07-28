@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../main.robot
+Resource        ../Main.Robot
 
 *** Variables ***
 ${email_cadastrado}    umendes@gmail.com

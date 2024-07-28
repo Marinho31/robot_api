@@ -18,7 +18,7 @@ Meu projeto é uma aplicação Robot Framework para testes automatizados. A estr
 
 - [massaDados.robot](./Resources/massaDados.robot): Dados usados nos testes.
 
-- [main.robot](./Resources/main.robot): Arquivo principal de recursos.
+- [Main.Robot](./Resources/Main.Robot): Arquivo principal de recursos.
   - Este arquivo inclui os seguintes recursos:
     - [config/Libraries.robot](./Resources/config/Libraries.robot)
     - [config/variables.robot](./Resources/config/variables.robot)
