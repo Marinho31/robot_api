@@ -50,3 +50,11 @@ Quando solicito a sua atualização
     ...                 url=${url}
 
     Set test variable   ${resposta}
+
+validating the current response with the expected response ${JSON_FILE}
+    ${file_content}=    Get File    ${JSON_FILE}
+    ${response_dump}=    Evaluate    json.dumps(${resposta.json()})    json
+    ${response_json}=    Evaluate    json.loads('''${response_dump}''')    modules=json
+    ${expected_json}=    Evaluate    json.loads('''${file_content}''')    modules=json
+    Set Test Variable    ${response_json}
+    Set Test Variable    ${expected_json}    

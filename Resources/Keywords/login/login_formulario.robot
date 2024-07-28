@@ -1,7 +1,8 @@
 
 *** Settings ***
-Resource        ../main.robot
-Resource        ../config/Libraries.robot
+Resource        ../../main.robot
+Resource        ../../config/Libraries.robot
+
 *** Keywords ***
 
 create login email ${email} password ${senha}

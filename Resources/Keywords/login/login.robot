@@ -1,5 +1,8 @@
 *** Settings ***
-Resource        ../main.robot
+
+Resource        ../../main.robot
+Resource        ../../config/Libraries.robot
+
 *** Keywords ***
 
 E verificdo dados da resposta
@@ -15,10 +18,10 @@ deve persisitir o campo cep ${cep} na resposta
     ${dado_cep}    Convert to string  ${dado_cep}
 
 
-Entao sistema verifica a resposta e nao deve logar
-    ${expected_response} =  Create Dictionary
-    ...    message=Wrong credentials provided.
-    Should Be Equal    ${expected_response}    ${resposta.json()}
+Entao sistema verifica a resposta e nao deve logar ${expected_response}
+     ${expected_json}  Convert To JSON  ${resposta.json()}
+     Should Be Equal    ${expected_response}    ${expected_json}
 
 get token user
     Set Test Variable    ${token_user}    ${resposta.json()['jwt']}
+

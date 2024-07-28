@@ -1,0 +1,86 @@
+{
+	"jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImlhdCI6MTcyMjEwOTE4NywiZXhwIjoxNzI0NzAxMTg3fQ.7EVGIyH7D_Oz76ZHTRNr5VAseEgc5fDi9Gk_Ih3MVP0",
+	"user": {
+		"id": 24,
+		"username": "qteste2323@gmail.com",
+		"email": "qteste2323@gmail.com",
+		"provider": {
+			"id": 34,
+			"name": "Caio Marinho",
+			"email": "qteste2323@gmail.com",
+			"document": "123.897.496-38",
+			"job_title": "QA",
+			"cel_phone_number": "(53) 45476-6545",
+			"type": {
+				"id": "AUT",
+				"name": "Autônomo"
+			},
+			"category": null,
+			"createdAt": "2024-07-23T20:45:58.434Z",
+			"updatedAt": "2024-07-23T20:49:26.512Z",
+			"phone_number": "(12) 3346-2352",
+			"legal_representative_name": "",
+			"cbo": {
+				"id": 243,
+				"code": "212405",
+				"description": "Analista de desenvolvimento de sistemas"
+			},
+			"regional_council": {
+				"id": "OUTROS",
+				"name": "OUTROS"
+			},
+			"birth_date": "1991-06-17",
+			"marital_status": null,
+			"provider_role": {
+				"id": 2,
+				"code": "ADMIN",
+				"name": "Administrador"
+			},
+			"rc_registration": "",
+			"rc_registration_date": null,
+			"rc_federation_unit": "",
+			"company": {
+				"id": 1,
+				"company_name": "B2 Digital",
+				"state_registration": "0756630000190",
+				"phone_number": "(99) 99999-9999",
+				"domain": "b2-digital",
+				"theme_color": "#fa470f",
+				"createdAt": "2023-10-15T13:57:36.438Z",
+				"updatedAt": "2024-07-07T19:07:08.260Z",
+				"email": "admin@b2.digital",
+				"document": "11.111.111/1111-11",
+				"company_trade_name": "B2 Digital"
+			},
+			"address": {
+				"id": 144,
+				"zip_code": "12312-312",
+				"address": "",
+				"neighborhood": "",
+				"number": "",
+				"complement": "",
+				"county": {
+					"id": 4536,
+					"name": "Santo André",
+					"ibge_code": "3547809",
+					"createdAt": "2024-04-17T00:00:28.647Z",
+					"updatedAt": "2024-04-17T00:00:28.647Z",
+					"federation_unit_id": {
+						"id": 21,
+						"name": "São Paulo",
+						"abbreviation": "SP",
+						"ibge_code": "35",
+						"createdAt": "2024-04-16T23:59:24.549Z",
+						"updatedAt": "2024-04-16T23:59:24.549Z"
+					}
+				}
+			},
+			"digital_signature": null
+		},
+		"confirmed": true,
+		"blocked": false,
+		"createdAt": "2024-07-23T20:46:04.455Z",
+		"updatedAt": "2024-07-27T18:21:02.699Z",
+		"profile": "AD"
+	}
+}

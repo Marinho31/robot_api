@@ -1,11 +1,20 @@
 *** Settings ***
 
 Resource       ../../../main.robot
+
 Test Setup    Criar secao
+
+*** Variables ***
+${response_login}    ${CURDIR}/../../../Data/dasos.resposta.json
+
 *** Test Cases ***
 
 CT01.01-Validar registro de usuario com sucesso
-    [Tags]    ok
+    [Tags]    smoke
     Given create login email %{USER} password %{PASSWORD}
-    And get token user
     When and I get the status "200" in the response
+    
+CT02 - Validar resposta de login
+    [Tags]    smoke
+    Given create login email %{USER} password %{PASSWORD}
+    Then validating the current response with the expected response ${response_login}
